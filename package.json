@@ -1,0 +1,38 @@
+{
+  "name": "error-page-generator",
+  "version": "1.0.0",
+  "description": "Create beautiful, professional error pages in seconds — A powerful tool for developers",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx http-server -p 8000 -o",
+    "test": "echo \"No tests configured yet\"",
+    "build": "echo \"No build process needed - pure HTML/CSS/JS\""
+  },
+  "keywords": [
+    "error-page",
+    "404",
+    "500",
+    "web-design",
+    "developer-tools",
+    "generator",
+    "responsive",
+    "dark-mode"
+  ],
+  "author": "Error Page Generator Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/error-page-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/error-page-generator/issues"
+  },
+  "homepage": "https://github.com/yourusername/error-page-generator#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

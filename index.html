@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Error Page Generator - Create beautiful 404, 500, and other error pages in seconds">
+    <meta name="keywords" content="error page, 404, generator, tool, developer">
+    <meta name="author" content="ErrorPageGenerator">
+    <title>Error Page Generator | Create Beautiful Error Pages</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23FF6B6B'>404</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="branding">
+                    <h1 class="logo">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Error Page Generator
+                    </h1>
+                    <p class="tagline">Create beautiful error pages in seconds</p>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Left Panel: Configuration -->
+                <aside class="config-panel">
+                    <h2>Configuration</h2>
+                    
+                    <!-- Error Code Selection -->
+                    <div class="form-section">
+                        <label for="errorCode" class="label">Error Code</label>
+                        <select id="errorCode" class="input">
+                            <option value="404">404 - Not Found</option>
+                            <option value="403">403 - Forbidden</option>
+                            <option value="500">500 - Server Error</option>
+                            <option value="502">502 - Bad Gateway</option>
+                            <option value="503">503 - Service Unavailable</option>
+                            <option value="offline">Offline - No Connection</option>
+                        </select>
+                    </div>
+
+                    <!-- Template Selection -->
+                    <div class="form-section">
+                        <label for="template" class="label">Design Template</label>
+                        <select id="template" class="input">
+                            <option value="tree">Tree (Minimalist)</option>
+                            <option value="robot">Robot</option>
+                            <option value="galaxy">Galaxy</option>
+                            <option value="404-text">Text Only</option>
+                        </select>
+                    </div>
+
+                    <!-- Error Title -->
+                    <div class="form-section">
+                        <label for="errorTitle" class="label">Error Title</label>
+                        <input 
+                            type="text" 
+                            id="errorTitle" 
+                            class="input" 
+                            placeholder="Page Not Found" 
+                            maxlength="50"
+                        >
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="form-section">
+                        <label for="errorMessage" class="label">Error Message</label>
+                        <textarea 
+                            id="errorMessage" 
+                            class="textarea" 
+                            placeholder="The page you're looking for doesn't exist or has been moved."
+                            maxlength="200"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <!-- Custom Button Text -->
+                    <div class="form-section">
+                        <label for="buttonText" class="label">Button Text</label>
+                        <input 
+                            type="text" 
+                            id="buttonText" 
+                            class="input" 
+                            placeholder="Go Home" 
+                            maxlength="30"
+                        >
+                    </div>
+
+                    <!-- Custom Button Link -->
+                    <div class="form-section">
+                        <label for="buttonLink" class="label">Button Link</label>
+                        <input 
+                            type="url" 
+                            id="buttonLink" 
+                            class="input" 
+                            placeholder="https://example.com" 
+                        >
+                    </div>
+
+                    <!-- Background Color -->
+                    <div class="form-section">
+                        <label for="bgColor" class="label">Background Color</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="bgColor" class="color-picker" value="#ffffff">
+                            <span class="color-value" id="bgColorValue">#ffffff</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Color -->
+                    <div class="form-section">
+                        <label for="textColor" class="label">Text Color</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="textColor" class="color-picker" value="#333333">
+                            <span class="color-value" id="textColorValue">#333333</span>
+                        </div>
+                    </div>
+
+                    <!-- Accent Color -->
+                    <div class="form-section">
+                        <label for="accentColor" class="label">Accent Color</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="accentColor" class="color-picker" value="#FF6B6B">
+                            <span class="color-value" id="accentColorValue">#FF6B6B</span>
+                        </div>
+                    </div>
+
+                    <!-- Show Navbar Toggle -->
+                    <div class="form-section checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showNavbar" class="checkbox" checked>
+                            <span>Show Navigation Bar</span>
+                        </label>
+                    </div>
+
+                    <!-- Show Footer Toggle -->
+                    <div class="form-section checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showFooter" class="checkbox" checked>
+                            <span>Show Footer</span>
+                        </label>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <button class="btn-reset" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset to Defaults
+                    </button>
+                </aside>
+
+                <!-- Right Panel: Preview & Code -->
+                <section class="preview-section">
+                    <!-- Tabs -->
+                    <div class="tabs-container">
+                        <button class="tab-btn active" data-tab="preview">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                        <button class="tab-btn" data-tab="code">
+                            <i class="fas fa-code"></i> Code
+                        </button>
+                    </div>
+
+                    <!-- Preview Tab -->
+                    <div class="tab-content active" id="preview-tab">
+                        <div class="preview-toolbar">
+                            <div class="viewport-selector">
+                                <button class="viewport-btn active" data-viewport="desktop" title="Desktop">
+                                    <i class="fas fa-desktop"></i>
+                                </button>
+                                <button class="viewport-btn" data-viewport="tablet" title="Tablet">
+                                    <i class="fas fa-tablet"></i>
+                                </button>
+                                <button class="viewport-btn" data-viewport="mobile" title="Mobile">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </button>
+                            </div>
+                            <button class="btn-open-full" id="openFullscreen" title="Open in new window">
+                                <i class="fas fa-external-link-alt"></i> Open Full
+                            </button>
+                        </div>
+                        <div class="preview-frame" id="previewFrame"></div>
+                    </div>
+
+                    <!-- Code Tab -->
+                    <div class="tab-content" id="code-tab">
+                        <div class="code-toolbar">
+                            <div class="code-format-selector">
+                                <button class="code-format-btn active" data-format="html">HTML</button>
+                                <button class="code-format-btn" data-format="css">CSS</button>
+                                <button class="code-format-btn" data-format="full">Full Page</button>
+                            </div>
+                            <button class="btn-copy" id="copyCodeBtn" title="Copy to clipboard">
+                                <i class="fas fa-copy"></i> Copy Code
+                            </button>
+                            <button class="btn-download" id="downloadBtn" title="Download as HTML file">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                        <pre class="code-container"><code id="codeDisplay" class="language-html"></code></pre>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Error Page Generator. Built with <i class="fas fa-heart"></i> for developers.</p>
+                <div class="footer-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Documentation</a>
+                    <a href="#" target="_blank">Report Issue</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/preview.js"></script>
+</body>
+</html>
