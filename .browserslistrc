@@ -1,0 +1,29 @@
+# Browserslist configuration for Autoprefixer
+# This tells Autoprefixer which browsers to add vendor prefixes for
+
+# Modern browsers (last 2 versions)
+last 2 versions
+
+# Browser market share > 0.5%
+> 0.5%
+
+# Not dead browsers (still receiving updates)
+not dead
+
+# Chrome modern versions
+chrome >= 60
+
+# Firefox modern versions
+firefox >= 55
+
+# Safari modern versions
+safari >= 12
+
+# Edge modern versions
+edge >= 15
+
+# iOS Safari
+ios_saf >= 12
+
+# Android browser
+android >= 9

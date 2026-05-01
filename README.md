@@ -1,46 +1,72 @@
-# Error Page Generator
+# Error Page Generator v2.0
 
- **Create beautiful, professional error pages in seconds** — A powerful tool for developers to design and generate custom 404, 500, and other error pages without coding.
+**Create beautiful, professional error pages in seconds** — A powerful, modern tool for developers to design and generate custom 404, 500, and other error pages without coding. Built with Tailwind CSS.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-06B6D4.svg)
 
 ## ✨ Features
 
-- 🎨 **Multiple Design Templates** — Tree, Robot, Galaxy, and Text-only styles
-- 🌈 **Full Customization** — Colors, text, buttons, and layout adjustments
-- 📱 **Responsive Design** — Looks great on desktop, tablet, and mobile devices
-- 🌓 **Dark Mode** — Built-in dark theme support with automatic persistence
+### Design & Styling
+- 🎨 **Tailwind CSS** — Modern utility-first CSS framework
+- ✨ **Glassmorphism** — Frosted glass effect with backdrop blur
+- 🌈 **Gradient Effects** — Beautiful color gradients and text animations
+- 🎭 **Multiple Design Templates** — Tree, Robot, Galaxy, and Text-only styles
+- 🌓 **Dark Mode** — Native dark mode with smooth transitions
+- 🎪 **Custom Animations** — Smooth fade, slide, bounce, and glow effects
+
+### Functionality
 - 👁️ **Live Preview** — Real-time preview with multiple viewport options
 - 📋 **Easy Code Export** — Copy HTML/CSS or download complete files
-- ⚡ **Zero Dependencies** — Pure HTML, CSS, and JavaScript (no build tools needed)
 - 💾 **Auto Save** — Your configurations are saved to browser's localStorage
+- 📱 **Responsive Design** — Perfectly optimized for desktop, tablet, and mobile
+- 🔧 **Full Customization** — Colors, text, buttons, and layout adjustments
 - 🚀 **Production Ready** — Deploy directly to any web server
+
+### Developer Experience
+- 📦 **Modern Build System** — npm-based build process with Tailwind CSS
+- 🛠️ **Easy Customization** — Modify colors and styles in `tailwind.config.js`
+- 📚 **Great Documentation** — Comprehensive guides for development and usage
+- 🎯 **Component Library** — Pre-built button, card, input, and badge components
+- 🌐 **Cross-browser** — Autoprefixer ensures compatibility with all modern browsers
 
 ## 🚀 Quick Start
 
-### Option 1: Direct Access (Recommended)
-Simply open `index.html` in your web browser:
-
+### Option 1: Development (Recommended)
 ```bash
-# Clone or download the project
+# Clone the repository
 git clone https://github.com/hamdyelbatal122/error-page-generator.git
 cd error-page-generator
 
-# Open in browser (choose one)
-# macOS
-open index.html
+# Install dependencies
+npm install
 
-# Linux
-xdg-open index.html
+# Start development with CSS watch
+npm run dev
 
-# Windows
-start index.html
+# In another terminal, start local server
+npm start
 
-# Or open with Python server for CORS-free access
-python -m http.server 8000
-# Then visit: http://localhost:8000
+# Open in browser
+# http://localhost:8000
+```
+
+### Option 2: Production Build
+```bash
+# Build minified CSS for production
+npm run build
+
+# Start local server
+npm start
+```
+
+### Option 3: Direct File Access (No Build)
+```bash
+# If you have pre-built files in dist/
+# Simply open dist/index.html in your browser
+open dist/index.html
 ```
 
 

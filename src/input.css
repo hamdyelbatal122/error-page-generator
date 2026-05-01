@@ -1,0 +1,188 @@
+/* ============================================
+   Error Page Generator - Tailwind CSS Base
+   ============================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Custom Component Classes
+   ============================================ */
+
+@layer components {
+  /* Glassmorphism Components */
+  .glassmorphism {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl;
+  }
+  
+  .glassmorphism-dark {
+    @apply backdrop-blur-xl bg-dark-800/40 border border-white/10 rounded-2xl;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+  }
+
+  .card-dark {
+    @apply bg-dark-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-dark-700;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary-500/50 hover:-translate-y-1 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gradient-to-r from-secondary-400 to-secondary-500 text-white hover:shadow-lg hover:shadow-secondary-500/50 hover:-translate-y-1 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-dark-700;
+  }
+
+  .btn-glass {
+    @apply btn glassmorphism text-white hover:bg-white/20 active:bg-white/10;
+  }
+
+  .btn-reset {
+    @apply btn bg-gradient-to-r from-dark-300 to-dark-200 text-dark-900 hover:shadow-md dark:from-dark-600 dark:to-dark-500 dark:text-white;
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white border-2 border-dark-200 rounded-lg text-dark-900 placeholder-dark-400 transition-all duration-300 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100;
+  }
+
+  .input-field-dark {
+    @apply w-full px-4 py-2.5 bg-dark-800 border-2 border-dark-700 rounded-lg text-white placeholder-dark-400 transition-all duration-300 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20;
+  }
+
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400;
+  }
+
+  /* Section Styles */
+  .section {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-header {
+    @apply mb-12 text-center;
+  }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl font-bold gradient-text mb-4;
+  }
+
+  /* Container Styles */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Divider */
+  .divider {
+    @apply h-px bg-gradient-to-r from-transparent via-dark-300 to-transparent dark:via-dark-700;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply relative inline-flex group;
+  }
+
+  .tooltip::after {
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-dark-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap;
+  }
+}
+
+/* ============================================
+   Custom Animations
+   ============================================ */
+
+@layer utilities {
+  .animate-in {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  .animate-bounce-soft {
+    animation: bounceSoft 2s infinite;
+  }
+
+  .hover\:scale-up:hover {
+    @apply scale-105 transition-transform;
+  }
+
+  .transition-all-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Scrollbar Styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(156, 163, 175) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(156, 163, 175);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(107, 114, 128);
+  }
+}
+
+/* ============================================
+   Dark Mode Specific Styles
+   ============================================ */
+
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  @layer utilities {
+    .no-print {
+      @apply hidden;
+    }
+  }
+}

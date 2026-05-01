@@ -1,13 +1,14 @@
 {
   "name": "error-page-generator",
-  "version": "1.0.0",
-  "description": "Create beautiful, professional error pages in seconds — A powerful tool for developers",
-  "main": "index.html",
+  "version": "2.0.0",
+  "description": "Create beautiful, professional error pages in seconds — A powerful tool for developers with Tailwind CSS styling",
+  "main": "dist/index.html",
   "scripts": {
-    "start": "python3 -m http.server 8000",
-    "serve": "npx http-server -p 8000 -o",
-    "test": "echo \"No tests configured yet\"",
-    "build": "echo \"No build process needed - pure HTML/CSS/JS\""
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/css/tailwind.css --minify",
+    "start": "python3 -m http.server 8000 --directory dist",
+    "serve": "npm run build && npx http-server dist -p 8000 -o",
+    "test": "echo \"Tests coming soon\""
   },
   "keywords": [
     "error-page",
@@ -30,9 +31,12 @@
   },
   "homepage": "https://github.com/hamdyelbatal122/error-page-generator#readme",
   "devDependencies": {
+    "tailwindcss": "^3.3.6",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16",
     "http-server": "^14.1.1"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   }
 }

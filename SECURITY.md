@@ -5,7 +5,7 @@
 **Please do not open a public issue for security vulnerabilities.**
 
 If you discover a security vulnerability in Error Page Generator, please email us at:
-**security@yourdomain.com**
+**security@hamzi.dev**
 
 Include the following information:
 - Description of the vulnerability
@@ -105,7 +105,7 @@ Once we receive a security report:
 ## Questions?
 
 For security-related questions:
-- Email: security@yourdomain.com
+- Email: security@hamzi.dev
 - GitHub: Create private security advisory
 
 ---
