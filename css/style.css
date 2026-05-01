@@ -174,16 +174,52 @@ html.dark .btn-reset {
     }
 }
 
+
+/* Scrollbar styles for light and dark mode */
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 12px;
+    background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+    border: 2px solid #f4f4f5;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+html.dark ::-webkit-scrollbar {
+    background: #181e2a;
+}
+html.dark ::-webkit-scrollbar-thumb {
+    background: #232a3a;
+    border: 2px solid #181e2a;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f4f4f5;
+}
+html.dark * {
+    scrollbar-color: #232a3a #181e2a;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .float-enter,
-    .toast,
-    .btn-primary,
-    .btn-secondary,
-    .btn-reset,
-    .tab-btn,
-    .viewport-btn,
-    .code-format-btn {
-        animation: none !important;
-        transition: none !important;
-    }
+        .float-enter,
+        .toast,
+        .btn-primary,
+        .btn-secondary,
+        .btn-reset,
+        .tab-btn,
+        .viewport-btn,
+        .code-format-btn {
+                animation: none !important;
+                transition: none !important;
+        }
 }
