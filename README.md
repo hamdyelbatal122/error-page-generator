@@ -13,7 +13,7 @@
 - 🎨 **Tailwind CSS** — Modern utility-first CSS framework
 - ✨ **Glassmorphism** — Frosted glass effect with backdrop blur
 - 🌈 **Gradient Effects** — Beautiful color gradients and text animations
-- 🎭 **Multiple Design Templates** — Tree, Robot, Galaxy, and Text-only styles
+- 🎭 **Multiple Design Templates** — Warning Badge, Broken Link, Server Alert, and Text-only styles
 - 🌓 **Dark Mode** — Native dark mode with smooth transitions
 - 🎪 **Custom Animations** — Smooth fade, slide, bounce, and glow effects
 
@@ -92,10 +92,10 @@ open dist/index.html
 - **Offline** - No Internet Connection
 
 #### Design Templates
-- **Tree** - Minimalist tree illustration
-- **Robot** - Friendly robot character
-- **Galaxy** - Cosmic space themed
-- **404 Text** - Typography-only design
+- **Warning Badge** - Alert-focused icon for generic errors
+- **Broken Link** - Best for 404 and navigation failures
+- **Server Alert** - Best for 5xx and backend failures
+- **Text Only** - Clean layout with no template icon
 
 #### Viewport Modes
 - Desktop (1920px standard)
@@ -122,7 +122,7 @@ Accent Color      → Error code & buttons (default: #FF6B6B)
 ### 1. Website 404 Page
 ```bash
 1. Select: 404 - Not Found
-2. Template: Tree or Robot
+2. Template: Warning Badge or Broken Link
 3. Customize with your branding colors
 4. Download and integrate with your web server
 ```
@@ -158,20 +158,21 @@ The app automatically saves your preferences:
 
 ```json
 {
-  "errorPageConfig": {
-    "errorCode": "404",
-    "template": "tree",
-    "errorTitle": "Page Not Found",
-    "errorMessage": "...",
-    "buttonText": "Go Home",
-    "buttonLink": "https://example.com",
-    "bgColor": "#ffffff",
-    "textColor": "#333333",
-    "accentColor": "#FF6B6B",
-    "showNavbar": true,
-    "showFooter": true
-  },
-  "darkMode": false
+    "epg-preferences": {
+        "theme": "modern",
+        "template": "warning-badge",
+        "errorCode": "404",
+        "errorTitle": "Page Not Found",
+        "errorMessage": "...",
+        "buttonText": "Go Home",
+        "buttonLink": "https://example.com",
+        "bgColor": "#ffffff",
+        "textColor": "#333333",
+        "accentColor": "#FF6B6B",
+        "showNavbar": true,
+        "showFooter": true
+    },
+    "epg-theme-dark": false
 }
 ```
 
@@ -182,7 +183,7 @@ The app automatically saves your preferences:
 ### Architecture
 - **Frontend Only** — SPA (Single Page Application)
 - **No Backend Required** — Pure client-side processing
-- **No Build System** — Ready to use immediately
+- **npm Build Available** — Optional Tailwind build output for `dist/`
 - **No External APIs** — Complete offline capability
 
 ### Browser Support
@@ -195,20 +196,24 @@ The app automatically saves your preferences:
 ### File Structure
 ```
 error-page-generator/
-├── index.html              # Main application HTML
+├── index.html              # Main application entry (development/root)
 ├── css/
-│   ├── style.css          # Core styles (500+ lines)
-│   └── themes.css         # Dark mode theme
+│   ├── style.css           # UI styles for the generator interface
+│   └── themes.css          # Legacy theme file
 ├── js/
-│   ├── app.js             # Main application logic (500+ lines)
-│   ├── generator.js       # Generator utilities (placeholder)
-│   └── preview.js         # Preview utilities (placeholder)
-├── assets/
-│   ├── templates/         # SVG template files
-│   └── icons/             # Icon assets
-├── README.md              # This file
-├── LICENSE                # MIT License
-└── .gitignore             # Git ignore rules
+│   ├── app.js              # Main application logic + HTML/CSS generator
+│   ├── generator.js        # Placeholder (reserved for future split)
+│   └── preview.js          # Placeholder (reserved for future split)
+├── src/
+│   └── input.css           # Tailwind input (build source)
+├── dist/
+│   ├── index.html          # Distribution entry
+│   ├── css/
+│   └── js/
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
 ```
 
 ### Code Statistics
@@ -440,14 +445,6 @@ copies or substantial portions of the Software.
 - Icons from Font Awesome
 - Fonts from system stack for performance
 
-## 📞 Connect With Me
-
-- **GitHub:** [hamdyelbatal122](https://github.com/hamdyelbatal122)
-- **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
-- **LinkedIn:** [your-profile](https://linkedin.com/in/your-profile)
-- **Portfolio:** [yourdomain.com](https://yourdomain.com)
-
----
 
 <div align="center">
 

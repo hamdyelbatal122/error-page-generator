@@ -7,6 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          500: '#f05d42',
+          600: '#e24c2e',
+          700: '#bf3d24',
+        },
+        mint: {
+          500: '#11b4a2',
+          600: '#0e9687',
+        },
         primary: {
           50: '#fff5f5',
           100: '#ffe0e0',
@@ -73,6 +84,7 @@ module.exports = {
         '3xl': '2rem',
       },
       boxShadow: {
+        soft: '0 20px 45px -25px rgba(15, 23, 42, 0.45)',
         xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
         sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
         md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',

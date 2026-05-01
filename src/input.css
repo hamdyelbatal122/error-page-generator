@@ -56,7 +56,7 @@
   }
 
   .btn-reset {
-    @apply btn bg-gradient-to-r from-dark-300 to-dark-200 text-dark-900 hover:shadow-md dark:from-dark-600 dark:to-dark-500 dark:text-white;
+    @apply btn bg-gradient-to-r from-dark-200 to-dark-100 text-dark-900 hover:shadow-md dark:from-dark-700 dark:to-dark-800 dark:text-white;
   }
 
   /* Input Styles */

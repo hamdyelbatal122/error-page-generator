@@ -1,286 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Error Page Generator - Create beautiful 404, 500, and other error pages in seconds">
-    <meta name="keywords" content="error page, 404, generator, tool, developer">
-    <meta name="author" content="ErrorPageGenerator">
-    <title>Error Page Generator | Create Beautiful Error Pages</title>
-    
+    <meta name="description" content="Professional Error Page Generator - create polished 404 and server error pages in seconds.">
+    <meta name="theme-color" content="#f05d42">
+    <title>Error Page Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/tailwind.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/themes.css">
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23FF6B6B'>404</text></svg>">
 </head>
-<body>
-    <div class="app-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="branding">
-                    <h1 class="logo">
-                        <i class="fas fa-code"></i>
-                        Error Page Generator
-                    </h1>
-                    <p class="tagline">Professional error pages in seconds</p>
+<body class="text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="min-h-screen">
+        <header class="sticky top-0 z-30 border-b border-white/30 dark:border-slate-700/50 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 float-enter">
+                    <div class="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-mint-500 text-white flex items-center justify-center shadow-soft">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">Error Page Generator</h1>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Create polished 404 and server pages in seconds</p>
+                    </div>
                 </div>
-                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <button id="themeToggle" class="h-10 w-10 rounded-xl border border-slate-300/70 dark:border-slate-600 hover:border-brand-500 hover:text-brand-600 transition-all flex items-center justify-center" title="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="container">
-                <!-- Left Panel: Configuration -->
-                <aside class="config-panel">
-                    <h2>Configuration</h2>
-                    
-                    <!-- Theme Selection -->
-                    <div class="form-section">
-                        <label for="errorTheme" class="label">Design Theme</label>
-                        <select id="errorTheme" class="input">
-                            <option value="modern">Modern Minimal</option>
-                            <option value="glassmorphism">Glassmorphism</option>
-                            <option value="gradient">Gradient Pro</option>
-                            <option value="neon">Neon Night</option>
-                            <option value="dark-modern">Dark Modern</option>
-                            <option value="elegant">Elegant</option>
-                            <option value="playful">Playful</option>
-                        </select>
-                    </div>
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-7">
+                <aside class="lg:col-span-1">
+                    <div class="glass-card rounded-2xl overflow-hidden lg:sticky lg:top-24">
+                        <div class="px-5 py-4 border-b border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
+                            <h2 class="text-lg font-bold"><i class="fas fa-sliders text-brand-500 mr-2"></i>Configuration</h2>
+                            <span class="text-xs mono px-2 py-1 rounded bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-300">LIVE</span>
+                        </div>
 
-                    <!-- Template Selection -->
-                    <div class="form-section">
-                        <label for="template" class="label">Design Template</label>
-                        <select id="template" class="input">
-                            <option value="tree">Tree (Minimalist)</option>
-                            <option value="robot">Robot</option>
-                            <option value="galaxy">Galaxy</option>
-                            <option value="404-text">Text Only</option>
-                        </select>
-                    </div>
+                        <div class="p-5 space-y-4 max-h-[calc(100vh-180px)] overflow-y-auto">
+                            <div>
+                                <label for="errorTheme" class="text-sm font-semibold mb-2 block">Design Theme</label>
+                                <select id="errorTheme" class="control-select">
+                                    <option value="modern">Modern Minimal</option>
+                                    <option value="glassmorphism">Glassmorphism</option>
+                                    <option value="gradient">Gradient Pro</option>
+                                    <option value="neon">Neon Night</option>
+                                    <option value="dark-modern">Dark Modern</option>
+                                    <option value="elegant">Elegant</option>
+                                    <option value="playful">Playful</option>
+                                </select>
+                            </div>
 
-                    <!-- Error Code Selection -->
-                    <div class="form-section">
-                        <label for="errorCode" class="label">Error Code</label>
-                        <select id="errorCode" class="input">
-                            <option value="404">404 - Not Found</option>
-                            <option value="403">403 - Forbidden</option>
-                            <option value="500">500 - Server Error</option>
-                            <option value="502">502 - Bad Gateway</option>
-                            <option value="503">503 - Service Unavailable</option>
-                            <option value="offline">Offline - No Connection</option>
-                        </select>
-                    </div>
+                            <div>
+                                <label for="template" class="text-sm font-semibold mb-2 block">Template</label>
+                                <select id="template" class="control-select">
+                                    <option value="warning-badge">Warning Badge</option>
+                                    <option value="broken-link">Broken Link</option>
+                                    <option value="server-alert">Server Alert</option>
+                                    <option value="text-only">Text Only</option>
+                                </select>
+                            </div>
 
-                    <!-- Animation Speed -->
-                    <div class="form-section">
-                        <label for="animationSpeed" class="label">Animation Speed</label>
-                        <div class="slider-container">
-                            <input type="range" id="animationSpeed" class="slider" min="0.5" max="3" step="0.5" value="1">
-                            <span class="slider-value" id="animationSpeedValue">Normal</span>
+                            <div>
+                                <label for="errorCode" class="text-sm font-semibold mb-2 block">Error Code</label>
+                                <select id="errorCode" class="control-select">
+                                    <option value="404">404 - Not Found</option>
+                                    <option value="403">403 - Forbidden</option>
+                                    <option value="500">500 - Server Error</option>
+                                    <option value="502">502 - Bad Gateway</option>
+                                    <option value="503">503 - Service Unavailable</option>
+                                    <option value="offline">Offline - No Connection</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="animationSpeed" class="text-sm font-semibold mb-2 block">Animation Speed</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="range" id="animationSpeed" class="w-full accent-brand-600" min="0.5" max="3" step="0.5" value="1">
+                                    <span id="animationSpeedValue" class="text-sm font-semibold text-brand-700 dark:text-brand-300">Normal</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="buttonStyle" class="text-sm font-semibold mb-2 block">Button Style</label>
+                                <select id="buttonStyle" class="control-select">
+                                    <option value="solid">Solid</option>
+                                    <option value="gradient">Gradient</option>
+                                    <option value="outline">Outline</option>
+                                    <option value="glassmorphism">Glassmorphism</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="fontSize" class="text-sm font-semibold mb-2 block">Font Size</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="range" id="fontSize" class="w-full accent-brand-600" min="0.8" max="1.3" step="0.1" value="1">
+                                    <span id="fontSizeValue" class="text-sm font-semibold text-brand-700 dark:text-brand-300">Normal</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="borderRadius" class="text-sm font-semibold mb-2 block">Roundness</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="range" id="borderRadius" class="w-full accent-brand-600" min="0" max="50" step="5" value="12">
+                                    <span id="borderRadiusValue" class="text-sm font-semibold text-brand-700 dark:text-brand-300">Medium</span>
+                                </div>
+                            </div>
+
+                            <div class="h-px bg-slate-200/70 dark:bg-slate-700/70"></div>
+
+                            <div>
+                                <label for="errorTitle" class="text-sm font-semibold mb-2 block">Error Title</label>
+                                <input type="text" id="errorTitle" maxlength="50" value="Page Not Found" class="control-input">
+                            </div>
+
+                            <div>
+                                <label for="errorMessage" class="text-sm font-semibold mb-2 block">Error Message</label>
+                                <textarea id="errorMessage" maxlength="200" rows="3" class="control-area">The page you are looking for does not exist or has been moved.</textarea>
+                            </div>
+
+                            <div>
+                                <label for="buttonText" class="text-sm font-semibold mb-2 block">Button Text</label>
+                                <input type="text" id="buttonText" maxlength="30" value="Go Home" class="control-input">
+                            </div>
+
+                            <div>
+                                <label for="buttonLink" class="text-sm font-semibold mb-2 block">Button Link</label>
+                                <input type="url" id="buttonLink" value="https://example.com" class="control-input">
+                            </div>
+
+                            <div class="h-px bg-slate-200/70 dark:bg-slate-700/70"></div>
+
+                            <div>
+                                <label for="bgColor" class="text-sm font-semibold mb-2 block">Background Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="bgColor" class="h-10 w-12 rounded-md border border-slate-300 bg-transparent" value="#ffffff">
+                                    <span id="bgColorValue" class="mono text-sm text-slate-600 dark:text-slate-300">#FFFFFF</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="textColor" class="text-sm font-semibold mb-2 block">Text Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="textColor" class="h-10 w-12 rounded-md border border-slate-300 bg-transparent" value="#333333">
+                                    <span id="textColorValue" class="mono text-sm text-slate-600 dark:text-slate-300">#333333</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="accentColor" class="text-sm font-semibold mb-2 block">Accent Color</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="color" id="accentColor" class="h-10 w-12 rounded-md border border-slate-300 bg-transparent" value="#FF6B6B">
+                                    <span id="accentColorValue" class="mono text-sm text-slate-600 dark:text-slate-300">#FF6B6B</span>
+                                </div>
+                            </div>
+
+                            <div class="h-px bg-slate-200/70 dark:bg-slate-700/70"></div>
+
+                            <label class="flex items-center gap-2 text-sm font-semibold">
+                                <input type="checkbox" id="showNavbar" checked class="accent-brand-600 h-4 w-4">
+                                Show Navigation Bar
+                            </label>
+                            <label class="flex items-center gap-2 text-sm font-semibold">
+                                <input type="checkbox" id="showFooter" checked class="accent-brand-600 h-4 w-4">
+                                Show Footer
+                            </label>
+
+                            <button id="resetBtn" class="btn-reset">
+                                <i class="fas fa-rotate-left mr-2"></i>Reset to Defaults
+                            </button>
                         </div>
                     </div>
-
-                    <!-- Button Style -->
-                    <div class="form-section">
-                        <label for="buttonStyle" class="label">Button Style</label>
-                        <select id="buttonStyle" class="input">
-                            <option value="solid">Solid</option>
-                            <option value="gradient">Gradient</option>
-                            <option value="outline">Outline</option>
-                            <option value="glassmorphism">Glassmorphism</option>
-                        </select>
-                    </div>
-
-                    <!-- Font Size -->
-                    <div class="form-section">
-                        <label for="fontSize" class="label">Font Size</label>
-                        <div class="slider-container">
-                            <input type="range" id="fontSize" class="slider" min="0.8" max="1.3" step="0.1" value="1">
-                            <span class="slider-value" id="fontSizeValue">Normal</span>
-                        </div>
-                    </div>
-
-                    <!-- Border Radius -->
-                    <div class="form-section">
-                        <label for="borderRadius" class="label">Roundness</label>
-                        <div class="slider-container">
-                            <input type="range" id="borderRadius" class="slider" min="0" max="50" step="5" value="12">
-                            <span class="slider-value" id="borderRadiusValue">Medium</span>
-                        </div>
-                    </div>
-                    <div class="form-section">
-                        <label for="errorTitle" class="label">Error Title</label>
-                        <input 
-                            type="text" 
-                            id="errorTitle" 
-                            class="input" 
-                            placeholder="Page Not Found" 
-                            maxlength="50"
-                        >
-                    </div>
-
-                    <!-- Error Message -->
-                    <div class="form-section">
-                        <label for="errorMessage" class="label">Error Message</label>
-                        <textarea 
-                            id="errorMessage" 
-                            class="textarea" 
-                            placeholder="The page you're looking for doesn't exist or has been moved."
-                            maxlength="200"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <!-- Custom Button Text -->
-                    <div class="form-section">
-                        <label for="buttonText" class="label">Button Text</label>
-                        <input 
-                            type="text" 
-                            id="buttonText" 
-                            class="input" 
-                            placeholder="Go Home" 
-                            maxlength="30"
-                        >
-                    </div>
-
-                    <!-- Custom Button Link -->
-                    <div class="form-section">
-                        <label for="buttonLink" class="label">Button Link</label>
-                        <input 
-                            type="url" 
-                            id="buttonLink" 
-                            class="input" 
-                            placeholder="https://example.com" 
-                        >
-                    </div>
-
-                    <!-- Background Color -->
-                    <div class="form-section">
-                        <label for="bgColor" class="label">Background Color</label>
-                        <div class="color-picker-wrapper">
-                            <input type="color" id="bgColor" class="color-picker" value="#ffffff">
-                            <span class="color-value" id="bgColorValue">#ffffff</span>
-                        </div>
-                    </div>
-
-                    <!-- Text Color -->
-                    <div class="form-section">
-                        <label for="textColor" class="label">Text Color</label>
-                        <div class="color-picker-wrapper">
-                            <input type="color" id="textColor" class="color-picker" value="#333333">
-                            <span class="color-value" id="textColorValue">#333333</span>
-                        </div>
-                    </div>
-
-                    <!-- Accent Color -->
-                    <div class="form-section">
-                        <label for="accentColor" class="label">Accent Color</label>
-                        <div class="color-picker-wrapper">
-                            <input type="color" id="accentColor" class="color-picker" value="#FF6B6B">
-                            <span class="color-value" id="accentColorValue">#FF6B6B</span>
-                        </div>
-                    </div>
-
-                    <!-- Show Navbar Toggle -->
-                    <div class="form-section checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="showNavbar" class="checkbox" checked>
-                            <span>Show Navigation Bar</span>
-                        </label>
-                    </div>
-
-                    <!-- Show Footer Toggle -->
-                    <div class="form-section checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="showFooter" class="checkbox" checked>
-                            <span>Show Footer</span>
-                        </label>
-                    </div>
-
-                    <!-- Reset Button -->
-                    <button class="btn-reset" id="resetBtn">
-                        <i class="fas fa-redo"></i> Reset to Defaults
-                    </button>
                 </aside>
 
-                <!-- Right Panel: Preview & Code -->
-                <section class="preview-section">
-                    <!-- Tabs -->
-                    <div class="tabs-container">
-                        <button class="tab-btn active" data-tab="preview">
-                            <i class="fas fa-eye"></i> Live Preview
-                        </button>
-                        <button class="tab-btn" data-tab="code">
-                            <i class="fas fa-terminal"></i> Code
-                        </button>
-                    </div>
-
-                    <!-- Preview Tab -->
-                    <div class="tab-content active" id="preview-tab">
-                        <div class="preview-toolbar">
-                            <div class="viewport-selector">
-                                <button class="viewport-btn active" data-viewport="desktop" title="Desktop">
-                                    <i class="fas fa-desktop"></i>
-                                </button>
-                                <button class="viewport-btn" data-viewport="tablet" title="Tablet">
-                                    <i class="fas fa-tablet"></i>
-                                </button>
-                                <button class="viewport-btn" data-viewport="mobile" title="Mobile">
-                                    <i class="fas fa-mobile-alt"></i>
-                                </button>
-                            </div>
-                            <button class="btn-open-full" id="openFullscreen" title="Open in new window">
-                                <i class="fas fa-external-link-alt"></i> Open Full
+                <section class="lg:col-span-3">
+                    <div class="glass-card rounded-2xl overflow-hidden min-h-[70vh] flex flex-col">
+                        <div class="grid grid-cols-2 border-b border-slate-200/70 dark:border-slate-700/70 bg-white/50 dark:bg-slate-900/30">
+                            <button class="tab-btn active px-4 py-3 border-b-2 border-brand-500 font-bold" data-tab="preview">
+                                <i class="fas fa-eye mr-2"></i>Live Preview
+                            </button>
+                            <button class="tab-btn px-4 py-3 border-b-2 border-transparent font-bold" data-tab="code">
+                                <i class="fas fa-code mr-2"></i>Code
                             </button>
                         </div>
-                        <div class="preview-frame" id="previewFrame"></div>
-                    </div>
 
-                    <!-- Code Tab -->
-                    <div class="tab-content" id="code-tab">
-                        <div class="code-toolbar">
-                            <div class="code-format-selector">
-                                <button class="code-format-btn active" data-format="html">HTML</button>
-                                <button class="code-format-btn" data-format="css">CSS</button>
-                                <button class="code-format-btn" data-format="full">Full Page</button>
+                        <div id="preview-tab" class="tab-content active flex-1 flex-col">
+                            <div class="px-4 py-3 border-b border-slate-200/70 dark:border-slate-700/70 flex items-center justify-between gap-3 bg-white/45 dark:bg-slate-900/25">
+                                <div class="flex gap-2">
+                                    <button class="viewport-btn active px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-viewport="desktop" title="Desktop">
+                                        <i class="fas fa-desktop"></i>
+                                    </button>
+                                    <button class="viewport-btn px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-viewport="tablet" title="Tablet">
+                                        <i class="fas fa-tablet-screen-button"></i>
+                                    </button>
+                                    <button class="viewport-btn px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-viewport="mobile" title="Mobile">
+                                        <i class="fas fa-mobile-screen-button"></i>
+                                    </button>
+                                </div>
+                                <button id="openFullscreen" class="btn-primary py-2 px-4 text-sm">
+                                    <i class="fas fa-up-right-from-square mr-2"></i>Open Full
+                                </button>
                             </div>
-                            <button class="btn-copy" id="copyCodeBtn" title="Copy to clipboard">
-                                <i class="fas fa-copy"></i> Copy Code
-                            </button>
-                            <button class="btn-download" id="downloadBtn" title="Download as HTML file">
-                                <i class="fas fa-download"></i> Download
-                            </button>
+                            <div id="previewFrame" class="flex-1 p-4 lg:p-6"></div>
                         </div>
-                        <pre class="code-container"><code id="codeDisplay" class="language-html"></code></pre>
+
+                        <div id="code-tab" class="tab-content flex-1 flex-col">
+                            <div class="px-4 py-3 border-b border-slate-200/70 dark:border-slate-700/70 flex flex-wrap items-center justify-between gap-3 bg-white/45 dark:bg-slate-900/25">
+                                <div class="flex gap-2">
+                                    <button class="code-format-btn active px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-format="html">HTML</button>
+                                    <button class="code-format-btn px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-format="css">CSS</button>
+                                    <button class="code-format-btn px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600" data-format="full">Full Page</button>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button id="copyCodeBtn" class="btn-secondary py-2 px-4 text-sm">
+                                        <i class="fas fa-copy mr-2"></i>Copy
+                                    </button>
+                                    <button id="downloadBtn" class="btn-primary py-2 px-4 text-sm">
+                                        <i class="fas fa-download mr-2"></i>Download
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="flex-1 overflow-auto bg-slate-950 text-slate-100 p-5 text-sm leading-6 mono"><code id="codeDisplay" class="language-html"></code></pre>
+                        </div>
                     </div>
                 </section>
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2024 Error Page Generator. Built with <i class="fas fa-heart"></i> for developers.</p>
-                <div class="footer-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Documentation</a>
-                    <a href="#" target="_blank">Report Issue</a>
-                </div>
+        <footer class="border-t border-white/40 dark:border-slate-700/60 bg-white/55 dark:bg-slate-900/55 backdrop-blur-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+                <p>Built for developers who care about polished error pages.</p>
+                <p class="mono">v2.1 interface refresh</p>
             </div>
         </footer>
 
-        <!-- Toast Notification -->
-        <div class="toast" id="toast"></div>
+        <div id="toast" class="toast fixed right-4 bottom-4 rounded-xl bg-slate-900 text-white text-sm font-semibold px-4 py-3 shadow-2xl"></div>
     </div>
 
     <script src="js/app.js"></script>
-    <script src="js/generator.js"></script>
-    <script src="js/preview.js"></script>
 </body>
 </html>
