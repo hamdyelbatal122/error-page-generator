@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Error Page Generator
 
  **Create beautiful, professional error pages in seconds** — A powerful tool for developers to design and generate custom 404, 500, and other error pages without coding.
