@@ -21,12 +21,12 @@
             <div class="header-content">
                 <div class="branding">
                     <h1 class="logo">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-code"></i>
                         Error Page Generator
                     </h1>
-                    <p class="tagline">Create beautiful error pages in seconds</p>
+                    <p class="tagline">Professional error pages in seconds</p>
                 </div>
-                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -39,16 +39,17 @@
                 <aside class="config-panel">
                     <h2>Configuration</h2>
                     
-                    <!-- Error Code Selection -->
+                    <!-- Theme Selection -->
                     <div class="form-section">
-                        <label for="errorCode" class="label">Error Code</label>
-                        <select id="errorCode" class="input">
-                            <option value="404">404 - Not Found</option>
-                            <option value="403">403 - Forbidden</option>
-                            <option value="500">500 - Server Error</option>
-                            <option value="502">502 - Bad Gateway</option>
-                            <option value="503">503 - Service Unavailable</option>
-                            <option value="offline">Offline - No Connection</option>
+                        <label for="errorTheme" class="label">Design Theme</label>
+                        <select id="errorTheme" class="input">
+                            <option value="modern">Modern Minimal</option>
+                            <option value="glassmorphism">Glassmorphism</option>
+                            <option value="gradient">Gradient Pro</option>
+                            <option value="neon">Neon Night</option>
+                            <option value="dark-modern">Dark Modern</option>
+                            <option value="elegant">Elegant</option>
+                            <option value="playful">Playful</option>
                         </select>
                     </div>
 
@@ -63,7 +64,56 @@
                         </select>
                     </div>
 
-                    <!-- Error Title -->
+                    <!-- Error Code Selection -->
+                    <div class="form-section">
+                        <label for="errorCode" class="label">Error Code</label>
+                        <select id="errorCode" class="input">
+                            <option value="404">404 - Not Found</option>
+                            <option value="403">403 - Forbidden</option>
+                            <option value="500">500 - Server Error</option>
+                            <option value="502">502 - Bad Gateway</option>
+                            <option value="503">503 - Service Unavailable</option>
+                            <option value="offline">Offline - No Connection</option>
+                        </select>
+                    </div>
+
+                    <!-- Animation Speed -->
+                    <div class="form-section">
+                        <label for="animationSpeed" class="label">Animation Speed</label>
+                        <div class="slider-container">
+                            <input type="range" id="animationSpeed" class="slider" min="0.5" max="3" step="0.5" value="1">
+                            <span class="slider-value" id="animationSpeedValue">Normal</span>
+                        </div>
+                    </div>
+
+                    <!-- Button Style -->
+                    <div class="form-section">
+                        <label for="buttonStyle" class="label">Button Style</label>
+                        <select id="buttonStyle" class="input">
+                            <option value="solid">Solid</option>
+                            <option value="gradient">Gradient</option>
+                            <option value="outline">Outline</option>
+                            <option value="glassmorphism">Glassmorphism</option>
+                        </select>
+                    </div>
+
+                    <!-- Font Size -->
+                    <div class="form-section">
+                        <label for="fontSize" class="label">Font Size</label>
+                        <div class="slider-container">
+                            <input type="range" id="fontSize" class="slider" min="0.8" max="1.3" step="0.1" value="1">
+                            <span class="slider-value" id="fontSizeValue">Normal</span>
+                        </div>
+                    </div>
+
+                    <!-- Border Radius -->
+                    <div class="form-section">
+                        <label for="borderRadius" class="label">Roundness</label>
+                        <div class="slider-container">
+                            <input type="range" id="borderRadius" class="slider" min="0" max="50" step="5" value="12">
+                            <span class="slider-value" id="borderRadiusValue">Medium</span>
+                        </div>
+                    </div>
                     <div class="form-section">
                         <label for="errorTitle" class="label">Error Title</label>
                         <input 
@@ -164,10 +214,10 @@
                     <!-- Tabs -->
                     <div class="tabs-container">
                         <button class="tab-btn active" data-tab="preview">
-                            <i class="fas fa-eye"></i> Preview
+                            <i class="fas fa-eye"></i> Live Preview
                         </button>
                         <button class="tab-btn" data-tab="code">
-                            <i class="fas fa-code"></i> Code
+                            <i class="fas fa-terminal"></i> Code
                         </button>
                     </div>
 

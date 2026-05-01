@@ -25,7 +25,7 @@ Simply open `index.html` in your web browser:
 
 ```bash
 # Clone or download the project
-git clone https://github.com/yourusername/error-page-generator.git
+git clone https://github.com/hamdyelbatal122/error-page-generator.git
 cd error-page-generator
 
 # Open in browser (choose one)
@@ -43,8 +43,6 @@ python -m http.server 8000
 # Then visit: http://localhost:8000
 ```
 
-### Option 2: Live Demo
-[View live demo](https://yourdomain.com/error-page-generator) (Update with your deployment URL)
 
 ## 📖 Usage Guide
 
@@ -226,14 +224,14 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/yourusername/error-page-generator.git
+git remote add origin https://github.com/hamdyelbatal122/error-page-generator.git
 git push -u origin main
 
 # 2. Enable GitHub Pages
 # Settings → Pages → Source: main branch
 
 # 3. Access your deployment
-# https://yourusername.github.io/error-page-generator/
+# https://hamdyelbatal122.github.io/error-page-generator/
 ```
 
 ### Deploy to Netlify
@@ -367,7 +365,7 @@ Contributions are welcome! Here's how:
 
 Found a bug? Have a suggestion? We'd love to hear from you!
 
-- **GitHub Issues:** [Create an issue](https://github.com/yourusername/error-page-generator/issues)
+- **GitHub Issues:** [Create an issue](https://github.com/hamdyelbatal122/error-page-generator/issues)
 - **Email:** contact@yourdomain.com
 - **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
 
@@ -418,7 +416,7 @@ copies or substantial portions of the Software.
 
 ## 📞 Connect With Me
 
-- **GitHub:** [yourusername](https://github.com/yourusername)
+- **GitHub:** [hamdyelbatal122](https://github.com/hamdyelbatal122)
 - **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
 - **LinkedIn:** [your-profile](https://linkedin.com/in/your-profile)
 - **Portfolio:** [yourdomain.com](https://yourdomain.com)
@@ -429,64 +427,6 @@ copies or substantial portions of the Software.
 
 **Made with ❤️ for developers**
 
-[⭐ Star this project on GitHub](https://github.com/yourusername/error-page-generator) — it helps others discover it!
+[⭐ Star this project on GitHub](https://github.com/hamdyelbatal122/error-page-generator) — it helps others discover it!
 
 </div>
-=======
-# 404 Page — Tree Style
-
-A creative **404 error page** with a tree-style animated design. Built with pure HTML and CSS to deliver a fun, user-friendly "Page Not Found" experience.
-
-## ✨ Features
-
-- 🌳 Unique tree-style visual design
-- 🎨 Pure HTML & CSS — no JavaScript required
-- ⚡ Lightweight and fast loading
-- 📱 Responsive layout
-- 🔌 Easy to integrate into any project
-
-## 🛠️ Tech Stack
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/hamdyelbatal122/404-Page-in-tree-style.git
-   cd 404-Page-in-tree-style
-   ```
-
-2. **Open in browser**
-   ```bash
-   open index.html
-   ```
-
-## 🔌 Integration
-
-To use this 404 page in your project, copy the HTML and CSS into your existing 404 error template.
-
-**Apache** — add to `.htaccess`:
-```apache
-ErrorDocument 404 /404.html
-```
-
-**Nginx** — add to `nginx.conf`:
-```nginx
-error_page 404 /404.html;
-```
-
-## 📁 Project Structure
-
-```
-404-Page-in-tree-style/
-├── index.html
-├── style.css
-└── README.md
-```
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
->>>>>>> origin/master

@@ -37,14 +37,14 @@ npx http-server -p 8000
 # 2. Create new repository named: error-page-generator
 # 3. Upload project files
 # 4. Settings → Pages → Enable GitHub Pages
-# 5. Your site is live at: https://yourusername.github.io/error-page-generator
+# 5. Your site is live at: https://hamdyelbatal122.github.io/error-page-generator
 
 # Via Git CLI:
 git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/yourusername/error-page-generator.git
+git remote add origin https://github.com/hamdyelbatal122/error-page-generator.git
 git push -u origin main
 ```
 

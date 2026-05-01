@@ -94,7 +94,7 @@ body {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
     padding: var(--spacing-xl) var(--spacing-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -167,6 +167,7 @@ body {
     box-shadow: var(--shadow-md);
     overflow-y: auto;
     max-height: calc(100vh - 250px);
+    border: 1px solid var(--border-color);
 }
 
 .config-panel h2 {
@@ -192,13 +193,13 @@ body {
 .color-picker {
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: var(--radius-md);
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-family);
     font-size: 0.875rem;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .input:focus,
@@ -206,6 +207,7 @@ body {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    transform: translateY(-1px);
 }
 
 .textarea {
@@ -232,6 +234,65 @@ body {
     color: var(--text-secondary);
 }
 
+/* Slider Container */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-fast);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-fast);
+}
+
+.slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.slider-value {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+}
+
 .checkbox-group {
     margin-bottom: var(--spacing-md);
 }
@@ -255,21 +316,24 @@ body {
 .btn-reset {
     width: 100%;
     padding: var(--spacing-md);
-    background-color: var(--gray-200);
+    background: linear-gradient(135deg, var(--gray-300), var(--gray-200));
     border: none;
     border-radius: var(--radius-md);
-    color: var(--gray-700);
-    font-weight: 600;
+    color: var(--gray-900);
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-fast);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .btn-reset:hover {
-    background-color: var(--gray-300);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, var(--gray-400), var(--gray-300));
 }
 
 /* Preview Section */
@@ -281,6 +345,7 @@ body {
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - 250px);
+    border: 1px solid var(--border-color);
 }
 
 .tabs-container {
@@ -359,23 +424,25 @@ body {
 .btn-copy,
 .btn-download {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    font-weight: 600;
-    transition: background-color var(--transition-fast);
+    font-weight: 700;
+    transition: all var(--transition-fast);
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
     font-size: 0.875rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .btn-open-full:hover,
 .btn-copy:hover,
 .btn-download:hover {
-    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
 }
 
 /* Preview Frame */
