@@ -1,4 +1,4 @@
-# Error Page Generator v2.0
+# Error Page Generator 
 
 **Create beautiful, professional error pages in seconds** — A powerful, modern tool for developers to design and generate custom 404, 500, and other error pages without coding. Built with Tailwind CSS.
 
